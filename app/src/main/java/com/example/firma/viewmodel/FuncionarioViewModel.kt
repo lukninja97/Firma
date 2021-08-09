@@ -1,6 +1,7 @@
 package com.example.firma.viewmodel
 
 import android.app.Application
+import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -10,6 +11,7 @@ import com.example.firma.service.model.FuncionarioModel
 import com.example.firma.service.repository.FuncionarioRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.net.URI
 
 class FuncionarioViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -52,6 +54,12 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     suspend fun update(funcionario: FuncionarioModel) {
         viewModelScope.launch(Dispatchers.IO) {
             mFuncionarioRepository.updateFuncionario(funcionario)
+        }
+    }
+
+    suspend fun delete(funcionario: FuncionarioModel){
+        viewModelScope.launch(Dispatchers.IO) {
+            mFuncionarioRepository.deleteFuncionario(funcionario)
         }
     }
 }

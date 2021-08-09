@@ -13,4 +13,15 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Button">
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:colorBackground">@color/green</item>
+    </style>
+
+    <style name="Button_red">
+        <item name="android:background">@drawable/shape_button_red</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

@@ -18,17 +18,14 @@
     <fragment
         android:id="@+id/funcionarioFragment"
         android:name="com.example.firma.view.FuncionarioFragment"
-        android:label="Formulario Funcionario"
+        android:label="Dados do Funcionario"
         tools:layout="@layout/fragment_funcionario">
+        <action
+            android:id="@+id/action_funcionarioFragment_to_nav_all_funcionarios"
+            app:destination="@id/nav_all_funcionarios" />
         <argument
-            android:name="funcionarioId"
-            app:argType="string"
-            android:defaultValue=""
-            app:nullable="true"/>
+            android:name="funcionario"
+            app:argType="com.example.firma.service.model.FuncionarioModel"
+            app:nullable="true" />
     </fragment>
-    <activity
-        android:id="@+id/funcionarioActivity2"
-        android:name="com.example.firma.view.FuncionarioActivity"
-        android:label="activity_funcionario"
-        tools:layout="@layout/activity_funcionario" />
 </navigation>
