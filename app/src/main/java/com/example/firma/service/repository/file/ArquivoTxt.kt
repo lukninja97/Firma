@@ -22,7 +22,7 @@ class ArquivoTxt(var context: Context) {
             if (file.exists()) {
                 file.readLines().forEach { line ->
                     println(line)
-                    line.split(";").let {
+                    line.trim().split(";").let {
                         val newFuncionario =
                             FuncionarioModel(
                                 it[0].toInt(),
@@ -76,12 +76,10 @@ class ArquivoTxt(var context: Context) {
             file.writeText("")
             funcionarios.forEach {
                 file.appendText("${it.id};${it.nome};${it.complemento};${it.reservado1};${it.reservado2}\n")
-                println("${it.id};${it.nome};${it.complemento};${it.reservado1};${it.reservado2}\n")
             }
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        println(file.toPath())
     }
 
     fun import(uri: Uri): List<FuncionarioModel> {

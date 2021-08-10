@@ -166,4 +166,14 @@ class FuncionarioFragment : Fragment() {
 
         binding.buttonDelete.isVisible = (args.funcionario?.id != null)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.apply {
+            editId.editText?.isCursorVisible = false
+            editNome.editText?.isCursorVisible = false
+            editReservado1.editText?.isCursorVisible = false
+            editReservado2.editText?.isCursorVisible = false
+        }
+    }
 }

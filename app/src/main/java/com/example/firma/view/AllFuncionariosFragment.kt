@@ -45,7 +45,7 @@ class AllFuncionariosFragment : Fragment() {
         binding.fabAddtxt.setOnClickListener {
             val file = File(context?.filesDir, "")
             println(file)
-            openFile(file.toUri())
+            openFile()
         }
 
         mAdapter =
@@ -61,7 +61,7 @@ class AllFuncionariosFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(context)
         recycler.adapter = mAdapter
 
-        mAllFuncionarioViewModel.load()
+        lifecycle.addObserver(mAllFuncionarioViewModel)
 
         observer()
 
@@ -76,14 +76,9 @@ class AllFuncionariosFragment : Fragment() {
         })
     }
 
-    private fun openFile(pickerInitialUri: Uri) {
+    private fun openFile() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-            //addCategory(Intent.CATEGORY_OPENABLE)
             type = "*/*"
-            //putExtra(Intent.EXTRA_TITLE, "funcionarios.txt")
-
-            //putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
-
         }
         startActivityForResult(intent, 111)
     }
@@ -98,7 +93,8 @@ class AllFuncionariosFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        _binding = null
         super.onDestroyView()
+        viewModelStore.clear()
+        _binding = null
     }
 }

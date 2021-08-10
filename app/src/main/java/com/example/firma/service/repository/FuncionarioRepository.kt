@@ -38,7 +38,6 @@ class FuncionarioRepository(var context: Context) {
     suspend fun importFuncionarios(uri: Uri): List<FuncionarioModel>{
         ArquivoTxt(context).import(uri).forEach {
             insertFuncionario(it)
-            println(it)
         }
         return mFirmaDataBase.getAll()
     }
