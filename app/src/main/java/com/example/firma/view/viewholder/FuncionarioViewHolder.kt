@@ -13,7 +13,7 @@ class FuncionarioViewHolder(private val binding: RowFuncionarioBinding) : Recycl
         binding.apply {
             textId.text = "#${funcionario.id}"
             textNome.text = funcionario.nome
-            if (funcionario.complemento == "Operador"){
+            if (funcionario.complemento == "OPERADOR"){
                 imagePerson.setImageResource(R.drawable.operador)
             }else{
                 imagePerson.setImageResource(R.drawable.mecanico)

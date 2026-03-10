@@ -147,7 +147,7 @@ class FuncionarioFragment : Fragment() {
             binding.apply {
                 editId.editText?.setText(it.id.toString())
                 editNome.editText?.setText(it.nome)
-                if (it.complemento == "Operador") {
+                if (it.complemento == "OPERADOR") {
                     radioOperador.isChecked = true
                     imageComplemento.setImageResource(R.drawable.operador)
                 } else {

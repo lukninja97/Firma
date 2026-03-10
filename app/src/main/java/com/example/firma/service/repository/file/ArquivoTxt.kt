@@ -97,7 +97,7 @@ class ArquivoTxt(var context: Context) {
                             FuncionarioModel(
                                 it[0].toInt(),
                                 it[1].uppercase(),
-                                if(it[2] == "O") "Operador" else "Mecanico",
+                                it[2].uppercase(),
                                 it[3].toInt(),
                                 it[4].toInt()
                             )
