@@ -89,9 +89,13 @@ class FuncionarioFragment : Fragment() {
 
     private fun handleSave() {
         val id: String = binding.editId.editText?.text.toString()
+        val reservado1 = binding.editReservado1.editText?.text.toString()
+        val reservado2 = binding.editReservado2.editText?.text.toString()
 
         if (id == "") {
             Toast.makeText(context, "O Id não pode ser nulo", Toast.LENGTH_SHORT).show()
+        } else if (reservado1 == "" || reservado2 == "") {
+            Toast.makeText(context, "O Reservado não pode ser nulo", Toast.LENGTH_SHORT).show()
         } else {
             val funcionario = FuncionarioModel(
                 id = id.toInt(),
@@ -101,8 +105,8 @@ class FuncionarioFragment : Fragment() {
                 } else {
                     "Mecanico"
                 },
-                reservado1 = binding.editReservado1.editText?.text.toString().toInt(),
-                reservado2 = binding.editReservado2.editText?.text.toString().toInt()
+                reservado1 = reservado1.toInt(),
+                reservado2 = reservado2.toInt()
             )
 
             lifecycleScope.launch {
