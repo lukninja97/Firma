@@ -1,31 +1,23 @@
 package com.example.firma.view
 
 import android.app.AlertDialog
-import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.os.Environment
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.navigation.ui.NavigationUI
 import com.example.firma.R
 import com.example.firma.databinding.FragmentFuncionarioBinding
 import com.example.firma.service.model.FuncionarioModel
 import com.example.firma.viewmodel.FuncionarioViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.io.File
-import java.net.URI
 
 class FuncionarioFragment : Fragment() {
 

@@ -2,11 +2,11 @@ package com.example.firma.service.repository.file
 
 import android.content.Context
 import android.net.Uri
-import android.os.Environment
 import com.example.firma.service.model.FuncionarioModel
-import java.io.*
-import java.net.URI
-import java.util.*
+import java.io.BufferedReader
+import java.io.File
+import java.io.IOException
+import java.io.InputStreamReader
 
 class ArquivoTxt(var context: Context) {
     private val arquivo = "funcionarios.txt"

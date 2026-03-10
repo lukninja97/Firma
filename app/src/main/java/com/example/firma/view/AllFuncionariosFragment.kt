@@ -2,18 +2,15 @@ package com.example.firma.view
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.provider.DocumentsContract
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firma.databinding.FragmentAllFuncionariosBinding
 import com.example.firma.view.adapter.FuncionarioAdapter
@@ -32,7 +29,7 @@ class AllFuncionariosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mAllFuncionarioViewModel = ViewModelProvider(this).get(AllFuncionariosViewModel::class.java)
+        mAllFuncionarioViewModel = ViewModelProvider(this)[AllFuncionariosViewModel::class.java]
 
         _binding = FragmentAllFuncionariosBinding.inflate(inflater, container, false)
 
