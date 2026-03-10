@@ -39,7 +39,7 @@ class AllFuncionariosFragment : Fragment() {
         binding.fabAdd.setOnClickListener {
             val action =
                 AllFuncionariosFragmentDirections.actionNavAllFuncionariosToFuncionarioFragment(null)
-            Navigation.findNavController(binding.root).navigate(action)
+            findNavController().navigate(action)
         }
 
         binding.fabAddtxt.setOnClickListener {
@@ -54,7 +54,7 @@ class AllFuncionariosFragment : Fragment() {
                     AllFuncionariosFragmentDirections.actionNavAllFuncionariosToFuncionarioFragment(
                         funcionarioModel
                     )
-                Navigation.findNavController(binding.root).navigate(action)
+                findNavController().navigate(action)
             }
 
         val recycler = binding.recyclerAllFuncionarios

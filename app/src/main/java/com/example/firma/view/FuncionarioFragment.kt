@@ -119,8 +119,7 @@ class FuncionarioFragment : Fragment() {
                     ).show()
                 }
 
-                Navigation.findNavController(binding.root)
-                    .navigate(FuncionarioFragmentDirections.actionFuncionarioFragmentToNavAllFuncionarios())
+                findNavController().navigate(FuncionarioFragmentDirections.actionFuncionarioFragmentToNavAllFuncionarios())
             }
 
             binding.editId.editText?.text?.clear()
